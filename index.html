@@ -1,0 +1,44 @@
+<!--Aula: referenciar elemtnos da DOM através do JavaScript
+e não simplesmente disparar eventos do HTML para o js-->
+<html>
+    <head> 
+        <meta charset="UTF-8">
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" name="nome" id="nome"/>
+            <input type="text" name="nome" id="nome2"/>
+            <button class="botao">Adicionar</button>
+        </div>
+
+
+        <script>
+            var inputElement = document.getElementById('nome'); // "document": referencia a DOM do código
+            /* ".getElementsByTagName": referenciar todos os elementos com tal <tag>
+                - Esse metódo sempre retorna um vetor por não saber se a <tag> é única */
+            var inputElement = document.getElementsByTagName('input')[0]; // pega só o <input> na posção informada no [] 
+            var inputElement = document.getElementsByTagName('input'); // caso não informado a posição, pega todos os <input's>
+            var inputElement = document.getElementsByClassName('nome'); // também retorna vetor, pois classe não é única
+            var inputElement = document.querySelector('div#app input');// percorre a DOM
+            var inputElement = document.querySelector('input[name=nome'); // referenciando uma propriedade do elemento           
+            var inputElement = document.querySelector('input');// retorna um único elemento, o primeiro que encontrar
+            var inputElement = document.querySelectorAll('input'); // retorna todos os elementos
+            
+            console.log(inputElement); // vai imprimir a HTMLCollection(x)
+            
+            var inputElement = document.querySelector('input[name=nome]');
+            var btnElement = document.querySelector('button.botao'); // para referenciar o elemento pela classe utiliza-se o "."     
+                   
+            // "Quando o botão for clicado, pega o valor da caixa de tecto a mostra no alerta"
+            btnElement.onclick = function() {
+                var text = inputElement.value;
+                alert(text);
+            }
+
+            /*  Com essa aula vimos a manipulação dos elementos da DOM somente através do JavaScript
+                 -Então não precisamos sujar o campo do HTML com um monte de métodos */
+                
+      </script>                        
+    </body>
+</html>
