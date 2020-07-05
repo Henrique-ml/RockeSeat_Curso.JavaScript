@@ -5,19 +5,20 @@
     </head>
     <body>
         <script>
-            // for, while
-            
-            for (var i = 0; i <= 100; i++){ // usar qunado se sabe o intervalo
-                console.log(i);
+            //INTERVALO: função que se executa várias vezes dentro de um intervalo
+            function exibeAlgo() {
+                console.log('Hello World');
             }
-            
-            var j = 0;
-            while (j <= 100) { // usar quando não se tem controle/não se sabe quantas vezes vai executar
-                console.log(j);
 
-                j++;
-            }
+
+            setInterval(exibeAlgo, 1000); // 1000 milissegundos = 1 segundo
+            /*  -Não se coloca o "()" logo depois da função, pois nesse caso é uma REFERENCIA. 
+                -Quando coloca o () logo após a função o método executa de carae não 
+                referenciando/repassando o escopo da função
+                -Ou seja, não executa a função ela simplesmente passa a função como parâmetro */ 
             
-        </script>
+            setTimeout(exibeAlgo, 5000) /* executa apenas uma vez com um delay 
+                                            (demorou nesse caso 5 segundos) */
+        </script>                        
     </body>
 </html>
