@@ -4,12 +4,32 @@
     </head>
     <body>
         <script>
-           function soma(numero1, numero2) { // quantos parametros quiser
-                var resultado = numero1 + numero2;
-                return resultado;
+           /*function retornaSexo(sexo) { // quantos parametros quiser
+                // M, F
+                // Masculino, Feminino
+
+                if (sexo === 'M') { // além de verificar se o valor é igual, vai verificar o tipo também
+                    return 'Masculino';
+                } else if (sexo === 'F') {
+                    return 'Feminino';
+                }else {
+                    return 'Outro';
+                }
+           }
+           */
+           function retornaSexo(sexo) {
+               switch (sexo) {
+                   case 'M':
+                        return 'Masculino';
+                    case 'F':
+                        return 'Feminino';
+                    default:
+                        return 'Outro';
+
+               }
            }
 
-           var resultado = soma(1, 2);
+           var resultado = retornaSexo('M');
            console,log(resultado);
         </script>
     </body>
