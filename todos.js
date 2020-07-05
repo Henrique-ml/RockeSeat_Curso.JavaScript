@@ -2,7 +2,7 @@ var listElement = document.querySelector('#app ul');
 var inputElement = document.querySelector('#app input');
 var buttonElement = document.querySelector('#app button');
 
-// Armazenar esses todos no js
+// __ Armazenar esses Todos no js __
 
 var todos = [ 
     'Fazer café', 
@@ -11,6 +11,8 @@ var todos = [
 ];
 
 function renderTodos() {
+    listElement.innerHTML = ''; // tudo queestiver dentro da <ul> é excluido
+
     for (todo of todos) {
         var todoElement = document.createElement('li');
         var todosText = document.createTextNode(todo);
@@ -20,4 +22,13 @@ function renderTodos() {
     }
 }
 
-renderTodos();
+function addTodo() {
+    var todoText = inputElement.value; // recuperar o valor do <input>
+
+    todos.push(todoText); // adicionar o todoText no array de todos
+    inputElement.value = ''; // apagar o que estiver escrito na caixinha do input
+    renderTodos(); // renderizar a lista com o item/texto adicionado
+}
+
+buttonElement.onclick = addTodo; // ao clicar no botão é acionado o método addTodo() 
+inputElement.onkeypress = addTodo;
