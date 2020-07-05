@@ -4,9 +4,20 @@ var buttonElement = document.querySelector('#app button');
 
 // Armazenar esses todos no js
 
-var todos =[ // como o TODO são só textos, fazemos simplesmente um array de string
-    //{ text: 'Fazer café, propriedade: 1,}, // caso fosse mais complexo do que um simples texto
+var todos = [ 
     'Fazer café', 
     'Estudar JavaScript',
     'Acessar comunidade da Rocketseat'
-]; 
+];
+
+function renderTodos() {
+    for (todo of todos) {
+        var todoElement = document.createElement('li');
+        var todosText = document.createTextNode(todo);
+
+        todoElement.appendChild(todosText);
+        listElement.appendChild(todoElement);
+    }
+}
+
+renderTodos();
