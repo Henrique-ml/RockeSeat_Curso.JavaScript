@@ -5,20 +5,19 @@
     </head>
     <body>
         <script>
-            var sexo = 'M';
-        
-            /*
-            if (sexo === 'M') {
-                return 'Masculino'
-            } else {
-                return 'Feminino'
+            // for, while
+            
+            for (var i = 0; i <= 100; i++){ // usar qunado se sabe o intervalo
+                console.log(i);
             }
-            */
+            
+            var j = 0;
+            while (j <= 100) { // usar quando não se tem controle/não se sabe quantas vezes vai executar
+                console.log(j);
 
-            var retorno = ( sexo === 'M' ) ? 'Masculino' : 'Feminino';
-            console.log(retorno);
-
-            //Condição ternária: condição simples na mesma linha
+                j++;
+            }
+            
         </script>
     </body>
 </html>
