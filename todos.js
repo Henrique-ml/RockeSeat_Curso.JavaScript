@@ -15,9 +15,21 @@ function renderTodos() {
 
     for (todo of todos) {
         var todoElement = document.createElement('li');
-        var todosText = document.createTextNode(todo);
+        var todoText = document.createTextNode(todo);
 
-        todoElement.appendChild(todosText);
+        // __ Criar no metodo pois é ele que cria a lista __
+
+        var linkElement = document.createElement('a');
+        linkElement.setAttribute('href', '#');
+        var linkText = document.createTextNode(' Excluir');
+        linkElement.appendChild(linkText);
+
+        var pos = todos.indexOf(todo); // retorna a posição de acordo com o valor na lista
+        linkElement.setAttribute('onclick', 'deleteTodo('+pos+')');
+
+        todoElement.appendChild(todoText);
+        todoElement.appendChild(linkElement);
+        
         listElement.appendChild(todoElement);
     }
 }
@@ -31,3 +43,9 @@ function addTodo() {
 }
 
 buttonElement.onclick = addTodo; // ao clicar no botão é acionado o método addTodo() 
+
+
+function deleteTodo(pos) {
+    todos.splice(pos, 1); // remove uma quantidade de items do array baseado na posição que passar
+    renderTodos();
+}
