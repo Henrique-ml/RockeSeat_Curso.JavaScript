@@ -9,4 +9,4 @@ var todos =[ // como o TODO são só textos, fazemos simplesmente um array de st
     'Fazer café', 
     'Estudar JavaScript',
     'Acessar comunidade da Rocketseat'
-];
+]; 
