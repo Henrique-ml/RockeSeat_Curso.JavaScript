@@ -5,30 +5,20 @@
     </head>
     <body>
         <script>
-           // AND, OR, NOT == &&, ||, !
+            var sexo = 'M';
+        
+            /*
+            if (sexo === 'M') {
+                return 'Masculino'
+            } else {
+                return 'Feminino'
+            }
+            */
 
-           var sexo = 'M', idade = 23;
+            var retorno = ( sexo === 'M' ) ? 'Masculino' : 'Feminino';
+            console.log(retorno);
 
-           if (sexo === 'M' && idade >= 18) {
-               console.log('OK');
-           }
-
-           if (sexo !== 'F') {
-               console.log('Eh Masculino');
-           }
-
-           /*
-           var masculino;
-           if (sexo === 'M') {
-               masculino = true;
-           } else {
-               masculino = false;
-           }
-           */
-
-           var masculino = sexo ==='M';
-
-           console.log(masculino);
+            //Condição ternária: condição simples na mesma linha
         </script>
     </body>
 </html>
