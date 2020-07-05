@@ -1,4 +1,4 @@
-<!--Aula: além de poder referenciar elementos da DOM pode-se também CRIAR elementos-->
+<!--Aula: além do js controlar a DOM, pode-se controlar as estilizações CSS-->
 <html>
     <head> 
         <meta charset="UTF-8">
@@ -6,42 +6,16 @@
     </head>
     <body>
         <div id="app">
-            <input id="nome">
+            <div class="box"></div>
         </div>
 
         
         <script>
+            var boxElement = document.querySelector('.box'); // referenciar a (primeira) classe="box"
 
-
-            // __ Cria elementos personalizados e mostrar na tela __
-
-            // 1) cria o elemento (link)
-            var linkElement = document.createElement('a'); // O parâmetro é a <tag> do elemento que se quer criar
-            linkElement.setAttribute('href', 'https://rocketseat.com.br');
-            linkElement.setAttribute('title', 'Site');// coloca outros atributos/otros elementos no escopo do <div>
-
-            // 2) cria o nome que vai aparecer no site (texto)
-            var textElement = document.createTextNode('Acessar site da Rocketseat'); // conseguimos criar mesmo não sendo um elemento HTML
-            
-            // 3) aloca o texto ao link
-            linkElement.appendChild(textElement); // "appendChild()": acrescenta elementos
-
-            // 4) referencia um DOM 
-            var containerElement = document.querySelector('#app'); // coonteinerElement agora é aquele <div>
-            
-            // 5) mostra na tela
-            containerElement.appendChild(linkElement); // "jogou" o elemento <a> no corpo do <div>
-
-
-            // __ Para remover elemento do corpo do <div> __
-
-            // 1) referencia o <input>
-            var inputElement = document.querySelector('#nome');
-
-            // 2) exclui o <input>
-            containerElement = document.removeChild(inputElement);
-
-
+            boxElement.style.width = 100;
+            boxElement.style.height = 100;
+            boxElement.style.backgroundColor = 'gray';
         </script>                        
     </body>
 </html>
