@@ -31,4 +31,3 @@ function addTodo() {
 }
 
 buttonElement.onclick = addTodo; // ao clicar no botão é acionado o método addTodo() 
-inputElement.onkeypress = addTodo;
